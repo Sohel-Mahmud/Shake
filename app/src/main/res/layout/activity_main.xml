@@ -12,7 +12,9 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
+            android:id="@+id/btnDone"
             android:text="DONE"
             android:textColor="#ffffff"
             android:layout_marginLeft="10dp"
@@ -30,6 +32,7 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_weight="1"
+                android:id="@+id/flgAfgan1"
                 android:layout_margin="10dp"
                 android:src="@drawable/flag_afgan"
                 android:scaleType="centerInside"
@@ -39,6 +42,7 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_weight="1"
+                android:id="@+id/flgBd2"
                 android:layout_margin="10dp"
                 android:src="@drawable/flag_bangla"
                 android:scaleType="centerInside"
@@ -59,7 +63,8 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:src="@drawable/flag_afgan"
+                android:id="@+id/flgBhutan3"
+                android:src="@drawable/flag_bhutan"
                 android:scaleType="centerInside"
                 android:adjustViewBounds="true"
                 android:layout_width="0dp"
@@ -68,35 +73,8 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:src="@drawable/flag_bangla"
-                android:scaleType="centerInside"
-                android:adjustViewBounds="true"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:weightSum="2"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:src="@drawable/flag_afgan"
-                android:scaleType="centerInside"
-                android:adjustViewBounds="true"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:src="@drawable/flag_bangla"
+                android:src="@drawable/flag_india"
+                android:id="@+id/flgIndia4"
                 android:scaleType="centerInside"
                 android:adjustViewBounds="true"
                 android:layout_width="0dp"
@@ -115,7 +93,8 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:src="@drawable/flag_afgan"
+                android:src="@drawable/flag_maldives"
+                android:id="@+id/flgMaldives5"
                 android:scaleType="centerInside"
                 android:adjustViewBounds="true"
                 android:layout_width="0dp"
@@ -124,7 +103,38 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:src="@drawable/flag_bangla"
+                android:src="@drawable/flag_nepal"
+                android:id="@+id/flgNepal6"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:src="@drawable/flag_pak"
+                android:id="@+id/flgPak7"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:src="@drawable/flag_srilanka"
+                android:id="@+id/flgSri8"
                 android:scaleType="centerInside"
                 android:adjustViewBounds="true"
                 android:layout_width="0dp"
