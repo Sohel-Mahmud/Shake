@@ -15,6 +15,7 @@ public class ShakeActivity extends AppCompatActivity {
     private SensorManager mSensorManager;
 
     private ShakeEventListener mSensorListener;
+    //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
