@@ -13,12 +13,14 @@ import android.widget.Toast;
 
 import com.octoriz.sohel.saarc.Entity.Name;
 import com.octoriz.sohel.saarc.Model.People;
+import com.octoriz.sohel.saarc.Preference.Preference;
 import com.octoriz.sohel.saarc.ViewModel.ShakeViewModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.prefs.Preferences;
 
 public class ShakeActivity extends AppCompatActivity {
 
@@ -29,17 +31,18 @@ public class ShakeActivity extends AppCompatActivity {
     private ShakeViewModel shakeViewModel;
     private List<People> allNames = new ArrayList<>();
     private List<People> sortedNames = new ArrayList<>();
-    int totalPeople;
-    People people;
-    int t;
-    int comb;
-    int counter = 0;
-    int check = 0;
-    String name;
-    List<String> xSplit = new ArrayList<>();
-    List<String> ySplit = new ArrayList<>();
+    private int totalPeople;
+    private String value="habijabi";
+    private int t;
+    private int comb;
+    private int counter = 0;
+    private int check = 0;
+    private List<String> xSplit = new ArrayList<>();
+    private List<String> ySplit = new ArrayList<>();
+    private ArrayList<String> roomList = new ArrayList<>();
     private int combinations = -1;
     private int changer;
+    private ArrayList<String> sharedPrefRoomList;
     //
 
     @Override
@@ -113,28 +116,51 @@ public class ShakeActivity extends AppCompatActivity {
                 allNames.add(new People(g,country7));
                 allNames.add(new People(h,country8));
 
-                //printList(allNames);
 
                 Collections.sort(allNames, new SortByNumberOfPeople());
-                printList(allNames);
+                //printList(allNames);
             }
         });
 
+        sharedPrefRoomList = new ArrayList<>();
+        try{
+            sharedPrefRoomList = Preference.getArrayPrefs("RoomList",ShakeActivity.this);
+        value = Preference.getPrefs("value",ShakeActivity.this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         mSensorListener.setOnShakeListener(new ShakeEventListener.OnShakeListener() {
 
             public void onShake() {
                 Toast.makeText(ShakeActivity.this, "Shake Detected!", Toast.LENGTH_SHORT).show();
             if(allNames.size()!=0){
-                if(combinations==-1){
+                if(combinations==-1 && !value.equals("info")){
+                    String names;
                     combinations = doRoomAllocating(allNames);
+
                     shake.setText("Shake Again for more combinations");
-                }else if(combinations>1){
+                }else if(combinations>1 && !value.equals("info")){
                     txtList.setText("");
                     doRoomMoreAllocating();
                 }
                 else{
-                    shake.setText("No more combinations!");
+                    txtList.setText("");
+                    if(roomList.size()!=0){
+                        Preference.setArrayPrefs("RoomList",roomList,ShakeActivity.this);
+                        Preference.setPrefs("value","info",ShakeActivity.this);
+
+                    }
+                    if(sharedPrefRoomList.size()>0){
+                        for(int i=0; i<sharedPrefRoomList.size(); i++){
+                            txtList.append("****possible room combinations*****\n");
+                            txtList.append(sharedPrefRoomList.get(i)+"\n");
+                        }
+                        shake.setText("All combinations!");
+
+                    }else{
+                        shake.setText("No more combinations!");
+                    }
                 }
             }else{
                 Toast.makeText(ShakeActivity.this, "List is empty", Toast.LENGTH_SHORT).show();
@@ -153,15 +179,21 @@ public class ShakeActivity extends AppCompatActivity {
         }
         ySplit.set(0,temp);
 
+        String names = null;
         for(int i=0; i<t; i++){
-            int roomNo = i;
+            int roomNo = i+1;
 
             if((totalPeople%2 == 1) && i==changer){
                 txtList.append("Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+" "+ySplit.get(t)+"\n");
+                names = names + "Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+" "+ySplit.get(t)+"\n";
+
             }else{
                 txtList.append("Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+"\n");
+                names = names + "Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+"\n";
+
             }
         }
+        roomList.add(names);
         ++changer;
         combinations--;
     }
@@ -192,18 +224,22 @@ public class ShakeActivity extends AppCompatActivity {
 
         changer = 0;
         txtList.append("Room Allocation\n");
+        String names = null;
         for(int i=0; i<t; i++){
-            int roomNo = i;
+            int roomNo = i+1;
             if(((totalPeople%2) == 1) && (i == changer)){
                 txtList.append("Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+" "+ySplit.get(t)+"\n");
+                names = names + "Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+" "+ySplit.get(t)+"\n";
             }else{
                 txtList.append("Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+"\n");
+                names = names + "Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+"\n";
             }
             txtList.append("\n");
         }
 
+        roomList.add(names);
         ++changer;
-        txtList.append(comb+" Combination Possible");
+//        txtList.append(comb+" Combination Possible");
         return comb;
     }
 

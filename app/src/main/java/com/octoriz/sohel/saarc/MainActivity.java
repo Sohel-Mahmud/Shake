@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.octoriz.sohel.saarc.Entity.Country;
+import com.octoriz.sohel.saarc.Preference.Preference;
 import com.octoriz.sohel.saarc.ViewModel.ShakeViewModel;
 
 import java.util.List;
@@ -146,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 shakeViewModel.deleteAllNames();
+                Preference.deleteSharedPref(MainActivity.this);
                 Toast.makeText(MainActivity.this, "Deleted all the data", Toast.LENGTH_SHORT).show();
             }
         });
