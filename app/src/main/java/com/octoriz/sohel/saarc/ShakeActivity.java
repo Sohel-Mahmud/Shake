@@ -129,7 +129,7 @@ public class ShakeActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+//
         mSensorListener.setOnShakeListener(new ShakeEventListener.OnShakeListener() {
 
             public void onShake() {
