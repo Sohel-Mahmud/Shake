@@ -25,4 +25,7 @@ public interface ShakeDao {
     @Query("SELECT * FROM country_table")
     public LiveData<List<Country>> getAllCountry();
 
+    @Query("SELECT * FROM name_table ORDER BY country_id")
+    public LiveData<List<Name>> getAllNames();
+
 }

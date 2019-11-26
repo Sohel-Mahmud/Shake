@@ -17,16 +17,19 @@ public class ShakeRepository {
     private ShakeDao shakeDao;
 
     private LiveData<List<Name>> allNamesById;
+    private LiveData<List<Name>> allNames;
     private LiveData<List<Country>> allCountries;
 
     public ShakeRepository(Application application){
         ShakeDatabase database = ShakeDatabase.getInstance(application);
         shakeDao = database.shakeDao();
         allCountries = shakeDao.getAllCountry();
+        allNames = shakeDao.getAllNames();
     }
 
     //livedata by default runs in background so no async is needed
     public LiveData<List<Country>> getAllCountriesLive(){return allCountries;}
+    public LiveData<List<Name>> getAllNames(){return allNames;}
 
     public LiveData<List<Name>> getAllNamesById(int id){
         allNamesById = shakeDao.getAllNamesById(id);

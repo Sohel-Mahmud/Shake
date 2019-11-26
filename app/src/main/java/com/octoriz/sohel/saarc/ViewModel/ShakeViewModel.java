@@ -16,12 +16,14 @@ public class ShakeViewModel extends AndroidViewModel {
 
     private ShakeRepository shakeRepository;
     private LiveData<List<Name>> nameList;
+    private LiveData<List<Name>> nameListAll;
     private LiveData<List<Country>> countryList;
 
     public ShakeViewModel(@NonNull Application application) {
         super(application);
         shakeRepository = new ShakeRepository(application);
         countryList = shakeRepository.getAllCountriesLive();
+        nameListAll = shakeRepository.getAllNames();
     }
 
     //wrapper methods
@@ -35,6 +37,7 @@ public class ShakeViewModel extends AndroidViewModel {
     public LiveData<List<Country>> getCountryList(){
         return countryList;
     }
+    public LiveData<List<Name>> getAllNames(){return nameListAll;}
 
     public LiveData<List<Name>> getNameList(int id){
         nameList = shakeRepository.getAllNamesById(id);
