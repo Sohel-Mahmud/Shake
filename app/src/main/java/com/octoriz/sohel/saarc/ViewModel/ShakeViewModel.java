@@ -34,6 +34,10 @@ public class ShakeViewModel extends AndroidViewModel {
         shakeRepository.insertName(name);
     }
 
+    public void deleteAllNames(){
+        shakeRepository.deleteAllNames();
+    }
+
     public LiveData<List<Country>> getCountryList(){
         return countryList;
     }

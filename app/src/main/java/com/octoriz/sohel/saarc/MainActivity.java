@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.octoriz.sohel.saarc.Entity.Country;
 import com.octoriz.sohel.saarc.ViewModel.ShakeViewModel;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ShakeViewModel shakeViewModel;
     private TextView txtCountryList;
     private AppCompatImageView afgan1, bd2, bhutan3, india4, maldives5, nepal6, pak7, sri8;
-    private AppCompatButton btnDone;
+    private AppCompatButton btnDone, btnDelete;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        txtCountryList = findViewById(R.id.countryList);
         btnDone = findViewById(R.id.btnDone);
+        btnDelete = findViewById(R.id.btnDelete);
 
         afgan1 = findViewById(R.id.flgAfgan1);
         bd2 = findViewById(R.id.flgBd2);
@@ -137,6 +139,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, ShakeActivity.class));
+            }
+        });
+        
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                shakeViewModel.deleteAllNames();
+                Toast.makeText(MainActivity.this, "Deleted all the data", Toast.LENGTH_SHORT).show();
             }
         });
     }

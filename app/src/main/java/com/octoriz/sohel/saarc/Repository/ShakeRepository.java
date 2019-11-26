@@ -40,6 +40,9 @@ public class ShakeRepository {
         new InserNameAsync(shakeDao).execute(name);
     }
 
+    public void deleteAllNames(){new DeleteAllNamesAsync(shakeDao).execute();}
+
+
     //static so doesn't have a ref to repository class, so no memery leak
     //asynctask takes 3 peram, 1=param passed to asynch, 2=progress, 3=return result type we get back
     private static class InserNameAsync extends AsyncTask<Name, Void, Void>{
@@ -53,6 +56,21 @@ public class ShakeRepository {
         @Override
         protected Void doInBackground(Name... names) {
             shakeDao.insertName(names[0]);
+            return null;
+        }
+    }
+
+    //delete all names
+    private static class DeleteAllNamesAsync extends AsyncTask<Void, Void, Void>{
+
+        private ShakeDao shakeDao;
+
+        private DeleteAllNamesAsync(ShakeDao shakeDao){
+            this.shakeDao = shakeDao;
+        }
+        @Override
+        protected Void doInBackground(Void... voids) {
+            shakeDao.deleteAllNames();
             return null;
         }
     }

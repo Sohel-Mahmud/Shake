@@ -7,6 +7,7 @@ import java.util.List;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -18,6 +19,9 @@ public interface ShakeDao {
 
     @Insert
     void insertCountry(Country country);
+
+    @Query("DELETE FROM name_table")
+    void deleteAllNames();
 
     @Query("SELECT * FROM name_table WHERE country_id = :countryId")
     public LiveData<List<Name>> getAllNamesById(int countryId);
