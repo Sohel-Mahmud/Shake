@@ -1,11 +1,11 @@
-package com.octoriz.sohel.saarc.Database;
+package com.octoriz.abids.saarc.Database;
 
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.octoriz.sohel.saarc.Dao.ShakeDao;
-import com.octoriz.sohel.saarc.Entity.Country;
-import com.octoriz.sohel.saarc.Entity.Name;
+import com.octoriz.abids.saarc.Dao.ShakeDao;
+import com.octoriz.abids.saarc.Entity.Country;
+import com.octoriz.abids.saarc.Entity.Name;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;

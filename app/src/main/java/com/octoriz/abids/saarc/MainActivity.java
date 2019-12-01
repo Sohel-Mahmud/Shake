@@ -1,11 +1,10 @@
-package com.octoriz.sohel.saarc;
+package com.octoriz.abids.saarc;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.room.Index;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +12,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.octoriz.sohel.saarc.Entity.Country;
-import com.octoriz.sohel.saarc.Preference.Preference;
-import com.octoriz.sohel.saarc.ViewModel.ShakeViewModel;
+import com.octoriz.abids.saarc.Entity.Country;
+import com.octoriz.abids.saarc.Preference.Preference;
+import com.octoriz.abids.saarc.ViewModel.ShakeViewModel;
 
 import java.util.List;
 

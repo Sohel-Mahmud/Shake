@@ -1,4 +1,4 @@
-package com.octoriz.sohel.saarc.Model;
+package com.octoriz.abids.saarc.Model;
 
 import java.util.List;
 

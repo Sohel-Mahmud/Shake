@@ -1,4 +1,4 @@
-package com.octoriz.sohel.saarc.Entity;
+package com.octoriz.abids.saarc.Entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

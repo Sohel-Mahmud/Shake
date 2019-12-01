@@ -1,10 +1,10 @@
-package com.octoriz.sohel.saarc.ViewModel;
+package com.octoriz.abids.saarc.ViewModel;
 
 import android.app.Application;
 
-import com.octoriz.sohel.saarc.Entity.Country;
-import com.octoriz.sohel.saarc.Entity.Name;
-import com.octoriz.sohel.saarc.Repository.ShakeRepository;
+import com.octoriz.abids.saarc.Entity.Country;
+import com.octoriz.abids.saarc.Entity.Name;
+import com.octoriz.abids.saarc.Repository.ShakeRepository;
 
 import java.util.List;
 

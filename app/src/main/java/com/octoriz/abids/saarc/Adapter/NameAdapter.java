@@ -1,11 +1,11 @@
-package com.octoriz.sohel.saarc.Adapter;
+package com.octoriz.abids.saarc.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.octoriz.sohel.saarc.Entity.Name;
-import com.octoriz.sohel.saarc.R;
+import com.octoriz.abids.saarc.Entity.Name;
+import com.octoriz.abids.saarc.R;
 
 import java.util.ArrayList;
 import java.util.List;

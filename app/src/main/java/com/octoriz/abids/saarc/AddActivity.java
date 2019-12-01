@@ -1,4 +1,4 @@
-package com.octoriz.sohel.saarc;
+package com.octoriz.abids.saarc;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -15,9 +15,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
-import com.octoriz.sohel.saarc.Adapter.NameAdapter;
-import com.octoriz.sohel.saarc.Entity.Name;
-import com.octoriz.sohel.saarc.ViewModel.ShakeViewModel;
+import com.octoriz.abids.saarc.Adapter.NameAdapter;
+import com.octoriz.abids.saarc.Entity.Name;
+import com.octoriz.abids.saarc.ViewModel.ShakeViewModel;
 
 import java.util.List;
 import java.util.Objects;

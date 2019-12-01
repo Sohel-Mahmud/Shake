@@ -1,4 +1,4 @@
-package com.octoriz.sohel.saarc;
+package com.octoriz.abids.saarc;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;

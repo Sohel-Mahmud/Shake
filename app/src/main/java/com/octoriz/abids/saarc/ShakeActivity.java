@@ -1,4 +1,4 @@
-package com.octoriz.sohel.saarc;
+package com.octoriz.abids.saarc;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -11,16 +11,15 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.octoriz.sohel.saarc.Entity.Name;
-import com.octoriz.sohel.saarc.Model.People;
-import com.octoriz.sohel.saarc.Preference.Preference;
-import com.octoriz.sohel.saarc.ViewModel.ShakeViewModel;
+import com.octoriz.abids.saarc.Entity.Name;
+import com.octoriz.abids.saarc.Model.People;
+import com.octoriz.abids.saarc.Preference.Preference;
+import com.octoriz.abids.saarc.ViewModel.ShakeViewModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.prefs.Preferences;
 
 public class ShakeActivity extends AppCompatActivity {
 
@@ -61,7 +60,7 @@ public class ShakeActivity extends AppCompatActivity {
                 totalPeople = names.size();
                 t = totalPeople/2;
                 comb = t;
-                txtList.append("Total People"+String.valueOf(totalPeople)+"\n");
+                txtList.append("Total People "+String.valueOf(totalPeople)+"\n");
                 int a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0;
                 List<String> country1 = new ArrayList<>();
                 List<String> country2 = new ArrayList<>();
@@ -179,7 +178,7 @@ public class ShakeActivity extends AppCompatActivity {
         }
         ySplit.set(0,temp);
 
-        String names = null;
+        String names = "";
         for(int i=0; i<t; i++){
             int roomNo = i+1;
 
@@ -212,7 +211,8 @@ public class ShakeActivity extends AppCompatActivity {
                 }
                 else{
                     if(possible!=0 && check == 0 && possible!= allNames.get(i).getPeopleCount()){
-                        comb = t - (possible*2)-1;
+//                        comb = t - (possible*2)-1;
+                        comb = t - possible;
                         possible = 0;
                         check = 1;
                     }
@@ -224,7 +224,7 @@ public class ShakeActivity extends AppCompatActivity {
 
         changer = 0;
         txtList.append("Room Allocation\n");
-        String names = null;
+        String names = "";
         for(int i=0; i<t; i++){
             int roomNo = i+1;
             if(((totalPeople%2) == 1) && (i == changer)){

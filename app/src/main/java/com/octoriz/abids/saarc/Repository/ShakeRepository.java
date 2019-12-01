@@ -1,12 +1,12 @@
-package com.octoriz.sohel.saarc.Repository;
+package com.octoriz.abids.saarc.Repository;
 
 import android.app.Application;
 import android.os.AsyncTask;
 
-import com.octoriz.sohel.saarc.Dao.ShakeDao;
-import com.octoriz.sohel.saarc.Database.ShakeDatabase;
-import com.octoriz.sohel.saarc.Entity.Country;
-import com.octoriz.sohel.saarc.Entity.Name;
+import com.octoriz.abids.saarc.Dao.ShakeDao;
+import com.octoriz.abids.saarc.Database.ShakeDatabase;
+import com.octoriz.abids.saarc.Entity.Country;
+import com.octoriz.abids.saarc.Entity.Name;
 
 import java.util.List;
 

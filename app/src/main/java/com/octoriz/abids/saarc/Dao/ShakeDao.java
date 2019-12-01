@@ -1,13 +1,12 @@
-package com.octoriz.sohel.saarc.Dao;
+package com.octoriz.abids.saarc.Dao;
 
-import com.octoriz.sohel.saarc.Entity.Country;
-import com.octoriz.sohel.saarc.Entity.Name;
+import com.octoriz.abids.saarc.Entity.Country;
+import com.octoriz.abids.saarc.Entity.Name;
 
 import java.util.List;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
-import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
