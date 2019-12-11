@@ -61,7 +61,7 @@ public class ShakeActivity extends AppCompatActivity {
                 t = totalPeople/2;
                 comb = t;
                 txtList.append("Total People "+String.valueOf(totalPeople)+"\n");
-                int a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0;
+                int a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0, o=0, p=0, q=0, r=0, s=0, t=0;
                 List<String> country1 = new ArrayList<>();
                 List<String> country2 = new ArrayList<>();
                 List<String> country3 = new ArrayList<>();
@@ -70,6 +70,12 @@ public class ShakeActivity extends AppCompatActivity {
                 List<String> country6 = new ArrayList<>();
                 List<String> country7 = new ArrayList<>();
                 List<String> country8 = new ArrayList<>();
+                List<String> country9 = new ArrayList<>();
+                List<String> country10 = new ArrayList<>();
+                List<String> country11 = new ArrayList<>();
+                List<String> country12 = new ArrayList<>();
+                List<String> country13 = new ArrayList<>();
+                List<String> country14 = new ArrayList<>();
 
                 for(int i=0; i<names.size(); i++){
 
@@ -105,6 +111,30 @@ public class ShakeActivity extends AppCompatActivity {
                         h++;
                         country8.add(names.get(i).getName());
                     }
+                    else if(names.get(i).getCountry_id()==9){
+                        o++;
+                        country9.add(names.get(i).getName());
+                    }
+                    else if(names.get(i).getCountry_id()==10){
+                        p++;
+                        country10.add(names.get(i).getName());
+                    }
+                    else if(names.get(i).getCountry_id()==11){
+                        q++;
+                        country11.add(names.get(i).getName());
+                    }
+                    else if(names.get(i).getCountry_id()==12){
+                        r++;
+                        country12.add(names.get(i).getName());
+                    }
+                    else if(names.get(i).getCountry_id()==13){
+                        s++;
+                        country13.add(names.get(i).getName());
+                    }
+                    else if(names.get(i).getCountry_id()==14){
+                        t++;
+                        country14.add(names.get(i).getName());
+                    }
                 }
                 allNames.add(new People(a,country1));
                 allNames.add(new People(b,country2));
@@ -114,6 +144,12 @@ public class ShakeActivity extends AppCompatActivity {
                 allNames.add(new People(f,country6));
                 allNames.add(new People(g,country7));
                 allNames.add(new People(h,country8));
+                allNames.add(new People(o,country9));
+                allNames.add(new People(p,country10));
+                allNames.add(new People(q,country11));
+                allNames.add(new People(r,country12));
+                allNames.add(new People(s,country13));
+                allNames.add(new People(t,country14));
 
 
                 Collections.sort(allNames, new SortByNumberOfPeople());
@@ -198,7 +234,7 @@ public class ShakeActivity extends AppCompatActivity {
     }
 
     private int doRoomAllocating(List<People> allNames) {
-        for(int i=0; i<8; i++){
+        for(int i=0; i<14; i++){
             int possible = allNames.get(i).getPeopleCount();
             for(int j=0; j<allNames.get(i).getPeopleCount(); j++){
                 if(counter!=t){

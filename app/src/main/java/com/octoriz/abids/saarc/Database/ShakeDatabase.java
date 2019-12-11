@@ -55,6 +55,7 @@ public abstract class ShakeDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
+
             shakeDao.insertCountry(new Country("Afganistan"));
             shakeDao.insertCountry(new Country("Bangladesh"));
             shakeDao.insertCountry(new Country("Bhutan"));
@@ -63,7 +64,12 @@ public abstract class ShakeDatabase extends RoomDatabase {
             shakeDao.insertCountry(new Country("Nepal"));
             shakeDao.insertCountry(new Country("Pakistan"));
             shakeDao.insertCountry(new Country("Srilanka"));
-
+            shakeDao.insertCountry(new Country("Country 1"));
+            shakeDao.insertCountry(new Country("Country 2"));
+            shakeDao.insertCountry(new Country("Country 3"));
+            shakeDao.insertCountry(new Country("Country 4"));
+            shakeDao.insertCountry(new Country("Country 5"));
+            shakeDao.insertCountry(new Country("Country 6"));
 
             return null;
         }

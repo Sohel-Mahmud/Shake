@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ShakeViewModel shakeViewModel;
     private TextView txtCountryList;
     private AppCompatImageView afgan1, bd2, bhutan3, india4, maldives5, nepal6, pak7, sri8;
+    private AppCompatImageView country1, country2, country3, country4, country5,country6;
     private AppCompatButton btnDone, btnDelete;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
         nepal6 = findViewById(R.id.flgNepal6);
         pak7 = findViewById(R.id.flgPak7);
         sri8 = findViewById(R.id.flgSri8);
+
+        country1 = findViewById(R.id.country1);
+        country2 = findViewById(R.id.country2);
+        country3 = findViewById(R.id.country3);
+        country4 = findViewById(R.id.country4);
+        country5 = findViewById(R.id.country5);
+        country6 = findViewById(R.id.country6);
 
         shakeViewModel = ViewModelProviders.of(this).get(ShakeViewModel.class);
 
@@ -131,6 +139,66 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, AddActivity.class);
                 intent.putExtra("id",8);
                 intent.putExtra("name","Srilanka");
+                startActivity(intent);
+            }
+        });
+
+        country1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                intent.putExtra("id",9);
+                intent.putExtra("name","country 1");
+                startActivity(intent);
+            }
+        });
+
+        country2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                intent.putExtra("id",10);
+                intent.putExtra("name","country 2");
+                startActivity(intent);
+            }
+        });
+
+        country3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                intent.putExtra("id",11);
+                intent.putExtra("name","country 3");
+                startActivity(intent);
+            }
+        });
+
+        country4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                intent.putExtra("id",12);
+                intent.putExtra("name","country 4");
+                startActivity(intent);
+            }
+        });
+
+        country5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                intent.putExtra("id",13);
+                intent.putExtra("name","country 5");
+                startActivity(intent);
+            }
+        });
+
+        country6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                intent.putExtra("id",14);
+                intent.putExtra("name","country 6");
                 startActivity(intent);
             }
         });
