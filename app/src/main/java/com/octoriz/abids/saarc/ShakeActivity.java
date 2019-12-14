@@ -219,12 +219,12 @@ public class ShakeActivity extends AppCompatActivity {
             int roomNo = i+1;
 
             if((totalPeople%2 == 1) && i==changer){
-                txtList.append("Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+" "+ySplit.get(t)+"\n");
-                names = names + "Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+" "+ySplit.get(t)+"\n";
+                txtList.append("Room No "+roomNo+". "+xSplit.get(i)+"  AND  "+ySplit.get(i)+"  AND  "+ySplit.get(t)+"\n");
+                names = names + "Room No "+roomNo+". "+xSplit.get(i)+"  AND  "+ySplit.get(i)+"  AND  "+ySplit.get(t)+"\n";
 
             }else{
-                txtList.append("Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+"\n");
-                names = names + "Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+"\n";
+                txtList.append("Room No "+roomNo+". "+xSplit.get(i)+"  AND  "+ySplit.get(i)+"\n");
+                names = names + "Room No "+roomNo+". "+xSplit.get(i)+"  AND  "+ySplit.get(i)+"\n";
 
             }
         }
@@ -248,7 +248,8 @@ public class ShakeActivity extends AppCompatActivity {
                 else{
                     if(possible!=0 && check == 0 && possible!= allNames.get(i).getPeopleCount()){
 //                        comb = t - (possible*2)-1;
-                        comb = t - possible;
+                        //comb = t - possible;
+                        comb = allNames.get(i).getPeopleCount()+1;
                         possible = 0;
                         check = 1;
                     }
@@ -264,11 +265,11 @@ public class ShakeActivity extends AppCompatActivity {
         for(int i=0; i<t; i++){
             int roomNo = i+1;
             if(((totalPeople%2) == 1) && (i == changer)){
-                txtList.append("Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+" "+ySplit.get(t)+"\n");
-                names = names + "Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+" "+ySplit.get(t)+"\n";
+                txtList.append("Room No "+roomNo+". "+xSplit.get(i)+"  AND  "+ySplit.get(i)+"  AND  "+ySplit.get(t)+"\n");
+                names = names + "Room No "+roomNo+". "+xSplit.get(i)+"  AND  "+ySplit.get(i)+"  AND  "+ySplit.get(t)+"\n";
             }else{
-                txtList.append("Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+"\n");
-                names = names + "Room No "+roomNo+". "+xSplit.get(i)+" "+ySplit.get(i)+"\n";
+                txtList.append("Room No "+roomNo+". "+xSplit.get(i)+"  AND  "+ySplit.get(i)+"\n");
+                names = names + "Room No "+roomNo+". "+xSplit.get(i)+"  AND  "+ySplit.get(i)+"\n";
             }
             txtList.append("\n");
         }
