@@ -249,7 +249,7 @@ public class ShakeActivity extends AppCompatActivity {
                     if(possible!=0 && check == 0 && possible!= allNames.get(i).getPeopleCount()){
 //                        comb = t - (possible*2)-1;
                         //comb = t - possible;
-                        comb = allNames.get(i).getPeopleCount()+1;
+                        comb = t - allNames.get(i).getPeopleCount()+1;
                         possible = 0;
                         check = 1;
                     }
